@@ -37,9 +37,6 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-    - name: Test kmeans algorithms
-      run: |
-        pytest test_kmeans.py
     - name: Test with make install
       run: |
         make install
