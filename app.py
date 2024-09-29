@@ -126,6 +126,7 @@ def update_plot(init_method, num_clusters, gen_dataset_clicks, step_clicks, conv
             # Set the manually selected centers once fully selected
             kmeans.centers = np.array(manual_centers)
             status_text = "Manual centroids selected, ready to proceed with KMeans."
+            kmeans.initialize()
 
         manual_instructions = f"Click to select {kmeans.k} centers. Selected {len(manual_centers)} so far."
 
