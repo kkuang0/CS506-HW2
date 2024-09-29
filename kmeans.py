@@ -4,7 +4,7 @@ import sklearn.datasets as datasets
 
 class KMeans:
     def __init__(self, k, init_method="kmeans++"):
-        self.data, _ = datasets.make_blobs(n_samples=300, centers=None, cluster_std=1, random_state=0)
+        self.data, _ = datasets.make_blobs(n_samples=300, centers=3, cluster_std=1, random_state=0)
         self.k = k
         self.init_method = init_method
         self.assignment = [-1 for _ in range(len(self.data))]
