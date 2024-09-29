@@ -106,6 +106,7 @@ def update_plot(init_method, num_clusters, gen_dataset_clicks, step_clicks, conv
 
     elif triggered_by == 'reset-button':
         kmeans.assignment = [-1 for _ in range(len(kmeans.data))]
+        kmeans.k = num_clusters
         manual_centers = []  # Reset manual centers when reset is clicked
         if init_method != 'manual':
             kmeans.initialize()
