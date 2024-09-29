@@ -105,7 +105,7 @@ def update_plot(init_method, num_clusters, gen_dataset_clicks, step_clicks, conv
             status_text = "KMeans has converged!"
 
     elif triggered_by == 'reset-button':
-        kmeans = KMeans(k=num_clusters, init_method=init_method)  # Reset the algorithm with the selected number of clusters
+        kmeans.assignment = [-1 for _ in range(len(kmeans.data))]
         manual_centers = []  # Reset manual centers when reset is clicked
         if init_method != 'manual':
             kmeans.initialize()

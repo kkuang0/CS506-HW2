@@ -4,16 +4,15 @@ import sklearn.datasets as datasets
 
 class KMeans:
     def __init__(self, k, init_method="kmeans++"):
-        self.data = None
+        self.data, _ = datasets.make_blobs(n_samples=500, centers=k, cluster_std=1)
+        self.assignment = [-1 for _ in range(len(self.data))]
         self.k = k
         self.init_method = init_method
-        self.assignment = None
         self.centers = None
         self.converged = False
 
     def initialize(self):
-        self.data, _ = datasets.make_blobs(n_samples=500, centers=self.k, cluster_std=1)
-        self.assignment = [-1 for _ in range(len(self.data))]
+        
         self.centers = None
         self.converged = False
         if self.init_method == "random":
