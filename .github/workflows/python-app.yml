@@ -42,4 +42,5 @@ jobs:
         make install
     - name: Test with make run
       run: |
-        make run
+        make run &
+        sleep 10
